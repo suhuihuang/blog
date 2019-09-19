@@ -2,7 +2,7 @@
 
 1. 介绍
 
-   ![图](./images/小黄象.png)
+   ![图](images\小黄象.png)
 
 2. hadoop 下载
 
