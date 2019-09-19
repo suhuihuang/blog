@@ -2,7 +2,7 @@
 
 1. 介绍
 
-   ![体系结构图](.\images\体系结构图.png)
+   ![体系结构图](./images/体系结构图.png)
 
 2. janusgraph 安装
 
