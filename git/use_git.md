@@ -24,6 +24,7 @@
     git log
     git log --pretty=short    # 只显示提交信息的第一行
     git log -p README.md      #  显示文件的改动
+    git log --graph           #  以图表形式查看分支
     ```
 
   - 查看工作树和暂存区的差别
@@ -61,6 +62,17 @@
   git checkout feature-A                  # 切换分支
   ```
 
-  
+三、合并分支
 
-- 
+- 想要合并分支，首先得切换到 master  分支
+
+  `git checkout  master`
+
+- 然后合并 feature-A 分支，为了在历史记录中明确记录下本次分支合并，我们需要创建合并提交。在合并时加上 `--no-ff`
+
+  `git merge --no-ff feature-A`
+
+- 以图表形式查看分支
+
+  `git log  --graph`
+
