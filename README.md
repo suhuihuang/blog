@@ -16,7 +16,7 @@
 
 4. [git 使用方法](git/use_git.md)
 
-   4.1[git插件]
+   4.1[git插件](git)
 
 5. 
 
