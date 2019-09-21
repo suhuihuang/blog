@@ -25,6 +25,8 @@
     git log --pretty=short    # 只显示提交信息的第一行
     git log -p README.md      #  显示文件的改动
     git log --graph           #  以图表形式查看分支
+    git reflog                #  查看当前仓库的操作日志
+    
     ```
 
   - 查看工作树和暂存区的差别
@@ -76,3 +78,21 @@
 
   `git log  --graph`
 
+四、更改提交的操作
+
+- 回溯历史版本
+
+  > 我们创建 fix-B  的特性分支，回溯到上一次提交。
+
+  ```
+  git checkout -b fix-B  # 创建 fix-B 分支
+  git reflog          # 查看当前仓库的操作日志
+  git checkout master # 回到主干分支
+  git reset --hard 602f3aa  # 回到哈希值为 602f3aa
+  ```
+
+  
+
+- 
+
+五、 
