@@ -4,7 +4,7 @@
 
 2. [janusgraph 图数据库](janusgraph)
 
-   2.1  [janusgraph安装](janusgraph/janusgraph 安装.md)
+   2.1  [janusgraph安装](janusgraph/janusgraph_安装.md)
 
    2.2 [FAQ](janusgraph/FAQ.md)
 
