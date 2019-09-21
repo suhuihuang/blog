@@ -8,7 +8,11 @@
 
    2.2 [FAQ](janusgraph/FAQ.md)
 
-   
+3. [ubuntu 应用](ubuntu_application/)
 
-3. 
+   3.1 [typora 安装](ubuntu_application/typora.md)
+
+   3.2 [VMware 安装](ubuntu_application/Vmware_安装.md)
+
+4. 
 
