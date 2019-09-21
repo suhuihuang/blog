@@ -18,5 +18,11 @@
 
    4.1[git插件](git)
 
-5. 
+5. [learn_java](java/learn_java.md)
+
+   5.1 [java 运算](java/learn_java_operation.ipynb)
+
+   5.2
+
+6. 
 
