@@ -1,14 +1,8 @@
 # hadoop 安装
 
-1. 介绍
-
-   ![小黄象](images/小黄象.png)
-
-   
-
 3. hadoop 下载
 
-   
+   [镜像源](https://www-eu.apache.org/dist/hadoop/common/)
 
 4. 解压安装
    ```
