@@ -2,6 +2,12 @@
 
 1. [hadoop 系列](hadoop)
 
+   1.1 [准备工作](hadoop/准备工作.md)
+
+   1.2 [zookeeper 部署](hadoop/zookeeper.md)
+
+   1.3 [hadoop 部署](hadoop/hadoop.md)
+
 2. [janusgraph 图数据库](janusgraph)
 
    2.1  [janusgraph安装](janusgraph/janusgraph_安装.md)
