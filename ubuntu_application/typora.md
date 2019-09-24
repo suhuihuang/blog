@@ -12,6 +12,8 @@ sudo apt-get install typora
 ./typora &
 ```
 
-
-
 参考来源: https://www.cnblogs.com/yimingwang/p/9639139.html
+
+ ### win 安装 typora
+  - [typora_win64](https://www.typora.io/windows/typora-setup-x64.exe?)
+  - [各系统版本](https://www.typora.io/#windows)

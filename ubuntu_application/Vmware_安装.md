@@ -1,12 +1,11 @@
 # ubuntu 安装 Vmware 15
-1.下载：
-  https://my.vmware.com/cn/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/15_0
+1.下载：https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html
 
 2.安装：
 
   ```
   sudo chmod +x VMware-Workstation-Full-15.0.2-10952284.x86_64.bundle 
-  sudo ./VMware-Workstation-Full-15.0.2-10952284.x86_64.bundle 
+  sudo ./VMware-Workstation-Full-15.5.0-14665864.x86_64.bundle 
   ```
 
 3.激活
@@ -20,3 +19,15 @@ VMware Workstation Pro 15 激活许可证
   YC74H-FGF92-081VZ-R5QNG-P6RY4
   YC34H-6WWDK-085MQ-JYPNX-NZRA2
   ```
+
+4. 卸载
+
+   ```
+    sudo  vmware-installer -u vmware-player
+   
+    sudo  vmware-installer -u vmware-workstation
+   ```
+
+   https://www.solaris-cookbook.eu/linux/ubuntu-how-to-uninstall-vmware-player-or-vmware-workstation/
+
+5. 
