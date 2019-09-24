@@ -22,6 +22,8 @@
 
    3.2 [VMware 安装](ubuntu_application/Vmware_安装.md)
 
+   3.3 [双系统windows时间不同步](ubuntu_application/双系统windows时间不同步.md)
+
 4. [git 使用方法](git/use_git.md)
 
    4.1[git插件](git)
