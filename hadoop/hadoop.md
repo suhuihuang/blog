@@ -16,16 +16,16 @@
 
    ```shell
    # jdk
-   export JAVA_HOME=/opt/jdk1.8
+   export JAVA_HOME=/app/deploy/jdk1.8
    
    # zookeeper
-   export ZK_HOME=/opt/zk
+   export ZK_HOME=/app/deploy/zk
    
    # hbase 
-   export HBASE_HOME=/opt/hbase
+   export HBASE_HOME=/app/deploy/hbase
    
    # janusgraph
-   export JANUSGRAPH_HOME=/opt/janusgraph
+   export JANUSGRAPH_HOME=/app/deploy/janusgraph
    
    # hadoop
    export HADOOP_HOME=/app/deploy/hadoop
@@ -47,17 +47,17 @@
 
    `source /etc/profile`  或  ` . /etc/profile`
 
-5. 修改配置文件(`/app/deploy/hadoop/etc/hadoop`)
+6. 修改配置文件(`/app/deploy/hadoop/etc/hadoop`)
 
    - `vim  hadoop-env.sh`
 
      ```shell
-     export JAVA_HOME=/opt/jdk1.8
+     export JAVA_HOME=/app/deploy/jdk1.8
      ```
 
      > 添加 jdk  路径
 
-   - 修改 `修改core-site.xml`
+   - 修改 `core-site.xml`
 
      ```shell
        <property>
@@ -71,6 +71,7 @@
        <property>
          <name>ha.zookeeper.quorum</name>
          <value>jp-node1:2181,jp-node2:2181,jp-node3:2181</value>
+       </property>
      ```
 
    - 修改 `hdfs-site.xml`
