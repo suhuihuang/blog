@@ -14,7 +14,9 @@
 
    2.1  [janusgraph安装](janusgraph/janusgraph_安装.md)
 
-   2.2 [FAQ](janusgraph/FAQ.md)
+   2.2  [janusgraph 语法](janusgraph/JanusGraph语法.md)
+
+   2.3  [FAQ](janusgraph/FAQ.md)
 
 3. [ubuntu 应用](ubuntu_application/)
 
