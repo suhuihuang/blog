@@ -106,16 +106,16 @@
   gremlin> :> g.addV()
   ==>v[4128]
   ```
-```
   
+
 返回的是创建成功的顶点的 `id`
-  
+
 - 创建带标签的顶点
 
 ```
   gremlin> :> g.addV('person')
   ==>v[4160]
-  ```
+```
 
   标签一旦创建之后不可更改
 
@@ -142,14 +142,13 @@
   ==>v[4112]
   ==>v[4120]
   ==>v[4128]
-  ....
   ```
 
   >  注：不推荐这样使用。当数据量很大的时候会卡死
 
 - 根据标签查看顶点
 
-  ```
+  ```groovy
   gremlin> :> g.V().hasLabel('person')
   ==>v[4160]
   ==>v[4168]
@@ -176,7 +175,7 @@
 
 - 查看顶点的标签
 
-  ```
+  ```groovy
   gremlin> :> g.V().has('name','suxiehe')
   ==>v[4328]
   gremlin> 
@@ -186,7 +185,7 @@
 
 - 查看顶点的属性键值对
 
-  ```
+  ```groovy
   gremlin> :> g.V().has('name','mobboy').valueMap()
   ==>{name=[mobboy]}
   gremlin>
@@ -194,24 +193,80 @@
 
   > 只查看属性值
 
-  ```
+  ```groovy
   gremlin> :> g.V().has('name','mobboy').values()
   ==>mobboy
   gremlin>
   ```
 
+- 查看顶点的所有信息
+
+  ```groovy
+  gremlin> :> g.V().valueMap(true)
+  ==>{id=4256, label=person, name=[huihuang]}
+  ==>{id=4264, label=person, name=[mobboy]}
+  ==>{id=4280, label=person, name=[suhuihuang]}
+  ==>{id=4312, label=person, name=[Dennis]}
+  ==>{id=4328, label=person, name=[suxiehe]}
+  gremlin> 
+  ```
+
+- 查看数据库中所有顶点的标签
+
+  ```groovy
+  gremlin> :> g.V().label()
+  ==>vertex
+  ==>person
+  gremlin> 
+  ```
+
+- 根据标签和属性一起查
+
+  ```groovy
+  gremlin> :> g.V()hasLabel('person').has('city','Chengdu')
+  ==>v[4168]
+  ==>v[8312]
   
-
-- 
-
+  gremlin> :> g.V()hasLabel('person').has('city').values()
+  ==>Chengdu
+  ==>huihuang
+  ==>Chengdu
+  ==>huihuang
   
+  gremlin> :> g.V()hasLabel('person').has('city').valueMap()
+  ==>{city=[Chengdu], name=[huihuang]}
+  ==>{city=[Chengdu], name=[huihuang]}
+  gremlin> 
+  ```
 
-  
-
-   
+  > g.V().hasLabel('airport').has('code','DFW')和g.V().has('airport','code','DFW')等价
 
 - 查询刚创建的顶点
 
   `g.V().has('name','Dennis').valueMap()`
 
+
+### 创建边
+
+- 创建边
+
+  ```groovy
+  gremlin> :> g.V().has('name','suxiehe').id()
+  ==>4328
+  gremlin> :> g.V().has('name','mobboy').id()
+  ==>4264
+  gremlin> :> g.addE('coll').from(g.V(4264)).to(g.V(4328))
+  ==>e[1lh-3ag-4get-3c8][4264-coll->4328]
+  gremlin>
+  ```
+
+  > 说明： `coll` 为边标签，表示同事关系
+
+- 查看边
+
+  
+
 - 
+
+
+
