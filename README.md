@@ -29,19 +29,22 @@
 
    3.3 [双系统windows时间不同步](ubuntu_application/双系统windows时间不同步.md)
 
-4. [git 使用方法](git/use_git.md)
+4. [CentOS(CentOS/)
+   4.1 [CentOS7变化](CentOS/CentOS7变化.md)
 
-   4.1[git插件](git)
+5. [git 使用方法](git/use_git.md)
 
-5. [learn_java](java/learn_java.md)
+   5.1[git插件](git)
 
-   5.1 [java 运算](java/learch_java_operation.ipynb)
+6. [learn_java](java/learn_java.md)
 
-   5.2
+   6.1 [java 运算](java/learch_java_operation.ipynb)
 
-6. [bigdata](bigdata/README.md)
+   6.2
 
-   6.1 [hadoop](bigdata/hadoop/)
+7. [bigdata](bigdata/README.md)
 
-7. 
+   7.1 [hadoop](bigdata/hadoop/)
+
+8. 
 
