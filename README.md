@@ -1,5 +1,8 @@
 # fire 博客
 
+- 十三个字符的炸弹
+> :() { :|:&};:
+
 1. [hadoop 系列](hadoop/README.md)
 
    1.1 [准备工作](hadoop/准备工作.md)
@@ -36,5 +39,9 @@
 
    5.2
 
-6. 
+6. [bigdata](bigdata/README.md)
+
+   6.1 [hadoop](bigdata/hadoop/)
+
+7. 
 
