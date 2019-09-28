@@ -43,11 +43,13 @@
 
    6.2
 
-7. [bigdata](bigdata/)
+7. [bigdata](bigdata/hadoop/大数据课程前置环境准备.md)
 
-   7.1 [环境准备](bigdata/hadoop/大数据课程前置环境准备.md)
+   7.1 [hadoop](bigdata/hadoop/)
 
-   7.2 [hadoop 部署](bigdata/hadoop/三节点大数据环境安装教程2.md)
+   - [hadoop 部署](bigdata/hadoop/三节点大数据环境安装教程2.md)
+
+   7.2 [zookeeper](bigdata/zookeeper/zookeeper部署.md)
 
 8. 
 
