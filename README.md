@@ -29,7 +29,8 @@
 
    3.3 [双系统windows时间不同步](ubuntu_application/双系统windows时间不同步.md)
 
-4. [CentOS(CentOS/)
+4. [CentOS](CentOS/)
+
    4.1 [CentOS7变化](CentOS/CentOS7变化.md)
 
 5. [git 使用方法](git/use_git.md)
@@ -43,7 +44,9 @@
    6.2
 
 7. [bigdata](bigdata/)
+
    7.1 [环境准备](bigdata/hadoop/大数据课程前置环境准备.md)
+
    7.2 [hadoop 部署](bigdata/hadoop/三节点大数据环境安装教程2.md)
 
 8. 
