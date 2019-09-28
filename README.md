@@ -9,9 +9,13 @@
 
    1.2 [zookeeper 部署](hadoop/zookeeper.md)
 
-   1.3 [hadoop 部署](hadoop/hadoop.md)
+   1.3 [hadoop 集群部署](hadoop/hadoop.md)
 
-   1.4 [hbase](hadoop/hbase.md)
+   1.4 [hadoop 集群测试检验](hadoop/测试检验.md)
+
+   1.5 [hadoop 配置文件详细说明](hadoop/hadoop_conf.md)
+
+   1.5  [hbase](hadoop/hbase.md)
 
 2. [janusgraph 图数据库](janusgraph)
 
