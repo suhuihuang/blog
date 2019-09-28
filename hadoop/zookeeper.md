@@ -27,15 +27,15 @@
 
 5. 修改 zookeeper 配置文件
 
-   - 修改 `zoo_sample.cfg` 配置文件  
+   - 修改 `zoo_sample.cfg` 配置文件  (`/app/deploy/zk/conf`)
 
      `cp zoo_sample.cfg zoo.cfg`
 
      `vim zoo.cfg`
 
      ```shell
-     dataDir=/opt/zk/data
-     dataLogDir=/opt/zk/log
+     dataDir=/app/deploy/zk/data
+     dataLogDir=/app/deploy/zk/log
      server.1=jp-node1:2888:3888
      server.2=jp-node2:2888:3888
      server.3=jp-node3:2888:3888
@@ -51,10 +51,12 @@
 
 6. 分发安装
 
-   ```
+   ```shell
    cd /app/deploy
-   scp -r zookeeper-3.4.14  /etc/profile  jp-node2:/app/deploy/
-   scp -r zookeeper-3.4.14  /etc/profile  jp-node2:/app/deploy/
+   scp -r zookeeper-3.4.14  jp-node2:/app/deploy
+   scp -r zookeeper-3.4.14  jp-node2:/app/deploy
+   scp /etc/profile jp-node2:/etc/
+   scp /etc/profile jp-node3:/etc/
    ```
 
    !!  记得修改  ` myid ` 
