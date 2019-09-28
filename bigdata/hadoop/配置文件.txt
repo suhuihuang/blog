@@ -1,0 +1,223 @@
+第三步：修改配置文件
+修改core-site.xml
+第一台机器执行以下命令
+cd /kkb/install/hadoop-2.6.0-cdh5.14.2/etc/hadoop
+vim core-site.xml
+
+<configuration>
+	<property>
+		<name>fs.defaultFS</name>
+		<value>hdfs://node01:8020</value>
+	</property>
+	<property>
+		<name>hadoop.tmp.dir</name>
+		<value>/kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/tempDatas</value>
+	</property>
+	<!--  缓冲区大小，实际工作中根据服务器性能动态调整 -->
+	<property>
+		<name>io.file.buffer.size</name>
+		<value>4096</value>
+	</property>
+<property>
+     <name>fs.trash.interval</name>
+     <value>10080</value>
+     <description>检查点被删除后的分钟数。 如果为零，垃圾桶功能将被禁用。 
+     该选项可以在服务器和客户端上配置。 如果垃圾箱被禁用服务器端，则检查客户端配置。 
+     如果在服务器端启用垃圾箱，则会使用服务器上配置的值，并忽略客户端配置值。</description>
+</property>
+
+<property>
+     <name>fs.trash.checkpoint.interval</name>
+     <value>0</value>
+     <description>垃圾检查点之间的分钟数。 应该小于或等于fs.trash.interval。 
+     如果为零，则将该值设置为fs.trash.interval的值。 每次检查指针运行时，
+     它都会从当前创建一个新的检查点，并删除比fs.trash.interval更早创建的检查点。</description>
+</property>
+</configuration>
+
+修改hdfs-site.xml
+第一台机器执行以下命令
+cd /kkb/install/hadoop-2.6.0-cdh5.14.2/etc/hadoop
+vim hdfs-site.xml
+
+<configuration>
+	<!-- NameNode存储元数据信息的路径，实际工作中，一般先确定磁盘的挂载目录，然后多个目录用，进行分割   --> 
+	<!--   集群动态上下线 
+	<property>
+		<name>dfs.hosts</name>
+		<value>/kkb/install/hadoop-2.6.0-cdh5.14.2/etc/hadoop/accept_host</value>
+	</property>
+	
+	<property>
+		<name>dfs.hosts.exclude</name>
+		<value>/kkb/install/hadoop-2.6.0-cdh5.14.2/etc/hadoop/deny_host</value>
+	</property>
+	 -->
+	 
+	 <property>
+			<name>dfs.namenode.secondary.http-address</name>
+			<value>node01:50090</value>
+	</property>
+
+	<property>
+		<name>dfs.namenode.http-address</name>
+		<value>node01:50070</value>
+	</property>
+	<property>
+		<name>dfs.namenode.name.dir</name>
+		<value>file:///kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/namenodeDatas</value>
+	</property>
+	<!--  定义dataNode数据存储的节点位置，实际工作中，一般先确定磁盘的挂载目录，然后多个目录用，进行分割  -->
+	<property>
+		<name>dfs.datanode.data.dir</name>
+		<value>file:///kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/datanodeDatas</value>
+	</property>
+	
+	<property>
+		<name>dfs.namenode.edits.dir</name>
+		<value>file:///kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/dfs/nn/edits</value>
+	</property>
+	<property>
+		<name>dfs.namenode.checkpoint.dir</name>
+		<value>file:///kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/dfs/snn/name</value>
+	</property>
+	<property>
+		<name>dfs.namenode.checkpoint.edits.dir</name>
+		<value>file:///kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/dfs/nn/snn/edits</value>
+	</property>
+	<property>
+		<name>dfs.replication</name>
+		<value>3</value>
+	</property>
+	<property>
+		<name>dfs.permissions</name>
+		<value>false</value>
+	</property>
+<property>
+		<name>dfs.blocksize</name>
+		<value>134217728</value>
+	</property>
+</configuration>
+
+修改hadoop-env.sh
+第一台机器执行以下命令
+cd /kkb/install/hadoop-2.6.0-cdh5.14.2/etc/hadoop
+vim hadoop-env.sh
+
+export JAVA_HOME=/kkb/install/jdk1.8.0_141
+修改mapred-site.xml
+第一台机器执行以下命令
+cd /kkb/install/hadoop-2.6.0-cdh5.14.2/etc/hadoop
+vim mapred-site.xml
+
+<configuration>
+	<property>
+		<name>mapreduce.framework.name</name>
+		<value>yarn</value>
+	</property>
+
+	<property>
+		<name>mapreduce.job.ubertask.enable</name>
+		<value>true</value>
+	</property>
+	
+	<property>
+		<name>mapreduce.jobhistory.address</name>
+		<value>node01:10020</value>
+	</property>
+
+	<property>
+		<name>mapreduce.jobhistory.webapp.address</name>
+		<value>node01:19888</value>
+	</property>
+</configuration>
+
+
+修改yarn-site.xml
+第一台机器执行以下命令
+cd /kkb/install/hadoop-2.6.0-cdh5.14.2/etc/hadoop
+vim yarn-site.xml
+
+<configuration>
+	<property>
+		<name>yarn.resourcemanager.hostname</name>
+		<value>node01</value>
+	</property>
+	<property>
+		<name>yarn.nodemanager.aux-services</name>
+		<value>mapreduce_shuffle</value>
+	</property>
+
+	
+	<property>
+		<name>yarn.log-aggregation-enable</name>
+		<value>true</value>
+	</property>
+
+
+	<property>
+		 <name>yarn.log.server.url</name>
+		 <value>http://node01:19888/jobhistory/logs</value>
+</property>
+
+<!--多长时间聚合删除一次日志 此处-->
+<property>
+        <name>yarn.log-aggregation.retain-seconds</name>
+        <value>2592000</value><!--30 day-->
+</property>
+<!--时间在几秒钟内保留用户日志。只适用于如果日志聚合是禁用的-->
+<property>
+        <name>yarn.nodemanager.log.retain-seconds</name>
+        <value>604800</value><!--7 day-->
+</property>
+<!--指定文件压缩类型用于压缩汇总日志-->
+<property>
+        <name>yarn.nodemanager.log-aggregation.compression-type</name>
+        <value>gz</value>
+</property>
+<!-- nodemanager本地文件存储目录-->
+<property>
+        <name>yarn.nodemanager.local-dirs</name>
+        <value>/kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/yarn/local</value>
+</property>
+<!-- resourceManager  保存最大的任务完成个数 -->
+<property>
+        <name>yarn.resourcemanager.max-completed-applications</name>
+        <value>1000</value>
+</property>
+
+</configuration>
+
+修改slaves文件
+第一台机器执行以下命令
+cd /kkb/install/hadoop-2.6.0-cdh5.14.2/etc/hadoop
+vim slaves
+
+node01
+node02
+node03
+
+第四步：创建文件存放目录
+第一台机器执行以下命令
+node01机器上面创建以下目录
+mkdir -p /kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/tempDatas
+mkdir -p /kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/namenodeDatas
+mkdir -p /kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/datanodeDatas
+mkdir -p /kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/dfs/nn/edits
+mkdir -p /kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/dfs/snn/name
+mkdir -p /kkb/install/hadoop-2.6.0-cdh5.14.2/hadoopDatas/dfs/nn/snn/edits
+
+第五步：安装包的分发
+第一台机器执行以下命令，将安装包分发到其他机器上面去
+cd /kkb/install/
+scp -r hadoop-2.6.0-cdh5.14.2/ node02:$PWD
+scp -r hadoop-2.6.0-cdh5.14.2/ node03:$PWD
+第六步：配置hadoop的环境变量
+三台机器都要进行配置hadoop的环境变量
+三台机器执行以下命令
+vim  /etc/profile
+
+export HADOOP_HOME=/kkb/install/hadoop-2.6.0-cdh5.14.2
+export PATH=:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
+配置完成之后生效
+source /etc/profile

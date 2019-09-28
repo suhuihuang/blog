@@ -42,9 +42,9 @@
 
    6.2
 
-7. [bigdata](bigdata/README.md)
-
-   7.1 [hadoop](bigdata/hadoop/)
+7. [bigdata](bigdata/)
+   7.1 [环境准备](bigdata/hadoop/大数据课程前置环境准备.md)
+   7.2 [hadoop 部署](bigdata/hadoop/三节点大数据环境安装教程2.md)
 
 8. 
 
