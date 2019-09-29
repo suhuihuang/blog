@@ -63,7 +63,7 @@
        storage.hostname=127.0.0.1
        index.search.backend=elasticsearch
        index.search.hostname=127.0.0.1
-       ```
+     ```
      
        
      
@@ -154,7 +154,7 @@
 
    - 启动Gremlin-Server
 
-     `nohup gremlin-server.sh conf/gremlin-server/gremlin-hbase-server.yaml &`
+     `nohup gremlin-server.sh conf/gremlin-server/gremlin-hbase-es-server.yaml &`
 
 8. 操作方式 
 
