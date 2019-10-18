@@ -38,11 +38,11 @@
 
 - Hadoop由三个模块组成：**分布式**存储HDFS、分布式计算MapReduce、资源调度引擎Yarn
 
-![](../hadoop/images/Image201906191834.png)
+![](assets/Image201906191834.png)
 
 #### 1.2 Hadoop历史
 
-![](../hadoop/images/Image201906202055.png)
+![](assets/Image201906202055.png)
 
 - Hadoop作者Doug Cutting
 
@@ -52,7 +52,7 @@
 
 - 2004年“谷歌MapReduce”论文，2005年Nutch开源版MapReduce
 
-![](images/Image201905201416.png)
+![](assets/Image201905201416.png)
 
 
 
@@ -77,7 +77,7 @@
 - 高容错：故障时能继续运行且不让用户察觉到明显的中断
 - 可扩展
 
-![](images/Image201907081216.png)
+![](assets/Image201907081216.png)
 
 **2.1.2 局限性**
 
@@ -115,7 +115,7 @@
 node01:50070
 ```
 
-![](images/Image201906291353.png)
+![](assets/Image201906291353.png)
 
 #### 3.3 HDFS编程（20分钟）
 
@@ -141,7 +141,7 @@ node01:50070
 
     - 方式二：利用IDEA图形化界面
     
-    ![](images/Image201909012314.png)
+    ![](assets/Image201909012314.png)
     
     - 运行jar包
     
@@ -275,7 +275,7 @@ node01:50070
 
 - 问：这样存储有没有问题？
 
-  ![](images/Image201906211051.png)
+  ![](assets/Image201906211051.png)
 
 #### **4.2 block副本**
 
@@ -297,13 +297,13 @@ node01:50070
   </property>
   ```
 
-![](images/Image201906211108.png)
+![](assets/Image201906211108.png)
 
 #### **4.3 机架存储策略**
 
 - 实际机房中，会有**机架**，每个机架上若干服务器
 
-![](images/Image201906211111.png)
+![](assets/Image201906211111.png)
 
 - 第一块：在本机器的HDFS目录下存储Block的第一个副本。
   第二块：在不同Rack(机架，暂且称为r1)的某个DataNode(称为dn2)上存储Block的第二个副本。
@@ -340,7 +340,7 @@ node01:50070
 [hadoop@node01 ~]$ hdfs fsck
 ```
 
-![](images/Image201909021420.png)
+![](assets/Image201909021420.png)
 
 - 查看文件中损坏的块
 
@@ -348,7 +348,7 @@ node01:50070
 [hadoop@node01 ~]$ hdfs fsck /tmall-201412-1w.csv -list-corruptfileblocks
 ```
 
-![](images/Image201909021422.png)
+![](assets/Image201909021422.png)
 
 - 查看文件的块基本信息
 
@@ -356,7 +356,7 @@ node01:50070
 hdfs fsck /02-041-0029.mp4 -files -blocks -locations
 ```
 
-![](images/Image201909021424.png)
+![](assets/Image201909021424.png)
 
 - 删除损坏的文件
 
@@ -375,7 +375,7 @@ hdfs fsck /02-041-0029.mp4 -files -blocks -locations
 
 ### 5. HDFS架构（重点 20分钟）
 
-![1558073557041](images/1558073557041.png)
+![1558073557041](assets/1558073557041.png)
 
 - 大多数分布式框架都是主从架构
 - HDFS也是主从架构Master|Slave或称为管理节点|工作节点
@@ -393,7 +393,7 @@ hdfs fsck /02-041-0029.mp4 -files -blocks -locations
   - 同一个目录中，不能有同名的文件或目录
   - 这样通过目录+文件名称的方式能够唯一的定位一个文件
 
-![](images/Image201906211418.png)
+![](assets/Image201906211418.png)
 
 **5.1.2 HDFS-NameNode**
 
@@ -405,9 +405,8 @@ hdfs fsck /02-041-0029.mp4 -files -blocks -locations
 - HDFS元数据
   - 文件目录树、所有的文件（目录）名称、文件属性（生成时间、副本、权限）、每个文件的块列表、每个block块所在的datanode列表
   
-
-![](images/Image201909031504.png)
-
+![](assets/Image201909031504.png)
+  
   - 每个文件、目录、block占用大概**150Byte字节的元数据**；所以HDFS适合存储大文件，不适合存储小文件
   
   - HDFS元数据信息以两种形式保存：①编辑日志**edits log**②命名空间镜像文件**fsimage**
@@ -415,7 +414,7 @@ hdfs fsck /02-041-0029.mp4 -files -blocks -locations
     - fsimage：HDFS元数据镜像文件 ，即将namenode内存中的数据落入磁盘生成的文件；保存了文件系统目录树信息以及文件、块、datanode的映射关系，如下图
 
 
-![](images/Image201910091133.png)
+![](assets/Image201910091133.png)
 
 > 说明：
 >
@@ -452,7 +451,7 @@ hdfs fsck /02-041-0029.mp4 -files -blocks -locations
 
 
 
-![](images/Image201906211525.png)
+![](assets/Image201906211525.png)
 
 - SecondaryNameNode定期做checkpoint检查点操作
 
@@ -495,7 +494,7 @@ hdfs fsck /02-041-0029.mp4 -files -blocks -locations
 
 #### 5.4 心跳机制
 
-![](images/Image201906211518.png)
+![](assets/Image201906211518.png)
 
 **工作原理：**
 
@@ -532,7 +531,7 @@ hdfs fsck /02-041-0029.mp4 -files -blocks -locations
 
 - 查看hdfs-default.xml默认配置文件
 
-![](images/Image201907311730.png)
+![](assets/Image201907311730.png)
 
 #### 5.5 负载均衡
 
@@ -566,7 +565,7 @@ $HADOOP_HOME/sbin/start-balancer.sh -t 5%	# 磁盘利用率最高的节点若比
 
 ## 六、总结（5分钟）
 
-![](images/Image201906211546.png)
+![](assets/Image201906211546.png)
 
 ## 七、作业
 
