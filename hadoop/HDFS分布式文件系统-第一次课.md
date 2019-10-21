@@ -428,7 +428,7 @@ hdfs fsck /02-041-0029.mp4 -files -blocks -locations
 - DataNode数据节点的作用
   - 存储block以及block元数据到datanode本地磁盘；此处的元数据包括数据块的长度、块数据的校验和、时间戳
 
-#### 5.3 SeconddaryNameNode   
+#### 5.3 SeconddaryNameNode
 
 - 为什么引入SecondaryNameNode
 

@@ -1,22 +1,26 @@
-#　Hadoop 
+# 大数据概论
 
-1. [ Hadoop部署](READMD.md)
+![1570691028120](images/1570691028120.png)
 
-   1.1 [大数据概论](大数据概论.md)
+![1570691102712](images/1570691102712.png)
 
-   1.2 [hadoop 部署](hadoop.md)
+![1570691116760](images/1570691116760.png)
 
-   1.3 [hadoop配置文件](hadoop_conf.md)
+> 大数据的特征：
 
-   1.4 [HDFS命令](HDFS命令.md)
+- 数据量大（volume）
+- 类型繁多（variety）
+- 价值密度低（value）
+- 速度快时效高（velocity）
 
-2. [HDFS介绍](HDFS/README.md)
+![1570691301281](images/1570691301281.png)
 
-   2.1 [数据块 block](HDFS/数据块block.md)
+> 大数据技术
 
-   2.2 [HDFS架构](HDFS/HDFS架构.md)
+- 传统大数据项目流程
 
-   
+  ![1570691457133](images/1570691457133.png)
 
-3. 
+- 计算三大类
 
+  ![1570691448814](images/1570691448814.png)
