@@ -67,6 +67,7 @@
 2. DataNode
    - DataNode 数据节点的作用
      - 存储block 以及block 元数据到 datanode 本地磁盘；此处的元数据包括数据的长度、块数据的校验和、时间戳
+     - 
 3. 
 4. 
 5. 
