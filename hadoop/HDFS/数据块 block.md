@@ -10,7 +10,7 @@
 
    - 问： 这样存储有没有问题 ?
 
-     ![](/images/Image201906211051.png)
+     ![](../images/Image201906211051.png)
 
 2. block 副本
 
@@ -33,7 +33,7 @@
      </property>
      ```
 
-     ![](/images/Image201906211108.png)
+     ![](../images/Image201906211108.png)
 
      
 
@@ -79,7 +79,7 @@
 
        `hdfs fsck`
 
-       ![](/images/Image201909021420.png)
+       ![](../images/Image201909021420.png)
 
      - 查看文件中损坏的块
 
@@ -87,7 +87,7 @@
        [hadoop@node1 ~]$ dhfs fsck /tmall-201412-1w.csv -list-corruptfileblocks
        ```
 
-       ![](/images/Image201909021422.png)
+       ![](../images/Image201909021422.png)
 
      - 查看文件的块基本信息
 
@@ -95,7 +95,7 @@
        hdfs fsck /02-041-0029.mp4 -files -blocks -localions
        ```
 
-       ![](/images/Image201909021424.png)
+       ![](../images/Image201909021424.png)
 
      - 删除损坏的文件
 
