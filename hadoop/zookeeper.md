@@ -18,7 +18,7 @@
 
 4. 配置zookeeper 的环境变量
 
-   ```
+   ```shell
    vi /etc/profile
    PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin:/app/deploy/zk/bin
    ```
@@ -75,7 +75,7 @@
 
    - 检验
 
-     ```
+     ```shell
      jps
      --观察是否有QuorumPeerMain进程
      ```
